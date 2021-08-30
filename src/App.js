@@ -1,11 +1,17 @@
 import './App.css';
-import BookComponent from './components/BookComponent';
+import { BookFuncComponent }  from './components/BookFuncComponent';
 
 function App() {
-  return (
+    const printHello = () => {
+        console.log ("here" + Math.random())
+    }
+
+    return (
     <div className="App">
-      <BookComponent />
+      <BookFuncComponent name={`Books - Functional`}
+                           onClicked={printHello}/>
     </div>
+
   );
 }
 

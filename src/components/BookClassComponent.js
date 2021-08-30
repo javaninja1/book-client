@@ -2,7 +2,7 @@
 import React from 'react';
 import BookService from '../services/BookService';
 
-class BookComponent extends React.Component {
+class BookClassComponent extends React.Component {
 
      constructor(props) {
         super(props)
@@ -20,7 +20,7 @@ class BookComponent extends React.Component {
      render() {
          return (
              <div>
-               <h1 className = "text-center"> Books List</h1> 
+               <h1 className = "text-center"> {this.props.name} </h1>
                <table className = "table table-striped">
                 <thead>
                  <tr>
@@ -34,8 +34,8 @@ class BookComponent extends React.Component {
                   {
                    this.state.books.map (
                        book =>
-                       <tr  key = {book.id} >
-                         <td>{book.id}</td>
+                       <tr  key = {book.bookId} >
+                         <td>{book.bookId}</td>
                          <td>{book.title}</td>
                          <td>{book.author}</td>
                        </tr>
@@ -51,4 +51,4 @@ class BookComponent extends React.Component {
      }
 }
 
-export default BookComponent;
+export default BookClassComponent;
